@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   # Home controller routes.
-  #root   'home#index'
+  root   'home#index'
   get    'auth'            => 'home#auth'
   
   # Get login token from Knock
@@ -18,9 +18,5 @@ Rails.application.routes.draw do
   # Identifier actions
   get    '/identifiers/current'  => 'identifiers#current'
   get    '/identifiers/next'  => 'identifiers#next'
-
-  # route for social app login
-  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth' }
-  root to: 'pages#home'
   
 end
